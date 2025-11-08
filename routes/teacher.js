@@ -3,16 +3,16 @@ import express from 'express'
 const router = express.Router()
 
 router.get('/all', (req,res)=>{
-    res.send("Get all student")
+    res.send("Get all Teacher")
 })
 router.post('/add', (req,res)=>{
-    res.send("Add student")
+    res.send("Add teacher")
 })
 router.put('/update', (req,res)=>{
-    res.send("update  student by id")
+    res.send("update  teacher by id")
 })
 router.delete('/delete', (req,res)=>{
-    res.send("delete student by  id")
+    res.send("delete teacher by")
 })
 
 export default router;
