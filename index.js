@@ -6,6 +6,11 @@ const app = express();
 app.use('/student', students)
 // app.use('/teacher', teachers)
 
+// Query string
+app.get('/product', (req,res)=>{
+    const {category,brand} = req.query
+    res.send(`the categroy is ${category} and the brand is ${brand}`)
+})
 
 // params
 app.delete('/student/delete/:id', (req, res) => {

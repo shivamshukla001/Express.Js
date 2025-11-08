@@ -4,6 +4,7 @@ const allStudent = (req,res)=>{
     res.send("All student")
 }
 
+
 const addStudent = (req,res)=>{
     res.send("Add a new student")
 }
