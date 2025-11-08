@@ -3,7 +3,7 @@ import students from './routes/student.js'
 import teachers from './routes/teacher.js'
 const app = express();
 
-// app.use('/student', students)
+app.use('/student', students)
 // app.use('/teacher', teachers)
 
 
