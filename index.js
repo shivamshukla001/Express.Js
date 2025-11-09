@@ -1,5 +1,7 @@
 import express from 'express'
+import path from 'path'
 import students from './routes/student.js'
+
 import teachers from './routes/teacher.js'
 import product from './product.js'
 import userCredentials from './middleware/logs.js'
@@ -7,13 +9,18 @@ import userCredentials from './middleware/logs.js'
 const app = express();
 
 app.use(userCredentials)
+app.use(express.static('./public'))
 
-app.get('/', userCredentials, (req,res)=>{
-    res.send("hello world")
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(process.cwd, './public/index.html'))
 })
-app.get('/about',(req,res)=>{
-    res.send("Hello this is a about page")
-})
+
+// app.get('/', userCredentials, (req,res)=>{
+//     res.send("hello world")
+// })
+// app.get('/about',(req,res)=>{
+//     res.send("Hello this is a about page")
+// })
 
 // app.use('/student', students)
 // app.use('/teacher', teachers)
